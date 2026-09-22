@@ -1,0 +1,41 @@
+name: ParaHoppers
+version: '${project.version}'
+main: network.paragon.hoppers.ParaHoppersLite
+author: Paragon Network
+description: ParaHoppers (Lite) - advanced hopper automation by Paragon Network.
+commands:
+  parahoppers:
+    description: Main Para Hoppers command.
+    aliases: [ph]
+    usage: /<command> [help|give|inspect|link|unlink|list|reload|stats]
+permissions:
+  parahoppers.use:
+    description: Use Para Hoppers.
+    default: true
+  parahoppers.place:
+    description: Place Para Hoppers.
+    default: true
+  parahoppers.inspect:
+    description: Inspect Para Hoppers.
+    default: true
+  parahoppers.admin:
+    description: Para Hoppers administrator permission.
+    default: op
+    children:
+      parahoppers.admin.give: true
+      parahoppers.admin.reload: true
+      parahoppers.admin.list: true
+      parahoppers.admin.stats: true
+  parahoppers.admin.give:
+    default: op
+  parahoppers.admin.reload:
+    default: op
+  parahoppers.admin.list:
+    default: op
+
+  parahoppers.admin.stats:
+    description: View Para Hoppers runtime performance statistics.
+    default: op
+
+api-version: '1.13'
+

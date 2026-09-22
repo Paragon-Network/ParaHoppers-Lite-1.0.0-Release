@@ -1,0 +1,51 @@
+title: "&8Para Hopper &7• &d%type%"
+rows: 4
+items:
+  info:
+    slot: 11
+    material: HOPPER
+    name: "&d&lPara Hopper Information"
+    lore:
+      - "&7Owner: &f%owner%"
+      - "&7UUID: &f%owner_uuid%"
+      - "&7Level: &f%level%&7/&f%max_level%"
+      - "&7Collection Radius: &a%collection_radius% blocks"
+      - "&7Collection: %collection_status%"
+      - "&7Location: &f%world% %x%, %y%, %z%"
+  upgrade:
+    slot: 15
+    material: EXPERIENCE_BOTTLE
+    name: "&a&lUpgrade Hopper"
+    lore:
+      - "&7Current Level: &f%level%"
+      - "&7Next Level: &f%next_level%"
+      - "&7Next Radius: &a%next_collection_radius% blocks"
+      - "&7Cost: &a%xp_cost% XP Levels"
+      - "&7Your Levels: &f%player_levels%"
+      - "&eClick to upgrade."
+  max-level:
+    slot: 15
+    material: NETHER_STAR
+    name: "&6&lMaximum Level"
+    lore:
+      - "&7Level: &f%level%&7/&f%max_level%"
+      - "&7Radius: &a%collection_radius% blocks"
+  mining:
+    slot: 31
+    material: IRON_PICKAXE
+    name: "&6&lAuto-Mining"
+    lore:
+      - "&7Status: %mining_status%"
+      - "&7Mining Area: &f%mining_area% &7(%mining_layer_blocks% blocks/layer)"
+      - "&7Depth: &fContinuous / layer-by-layer"
+      - "&7Blocks/Cycle: &f%mining_blocks%"
+      - "&eClick to toggle."
+
+  filter:
+    slot: 29
+    material: COMPARATOR
+    name: "&b&lItem Filter"
+    lore:
+      - "&7Mode: &f%filter_mode%"
+      - "&7Entries: &f%filter_count%"
+      - "&eClick to manage."

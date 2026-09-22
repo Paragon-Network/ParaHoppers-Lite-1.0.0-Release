@@ -1,0 +1,138 @@
+# ParaHoppers Lite 1.0.0
+hopper:
+  default-level: 1
+  max-level: 5
+  display-name: "&d&lPara Hopper &8[&fLite&8]"
+
+upgrades:
+  enabled: true
+  levels:
+    2: { experience-levels: 5 }
+    3: { experience-levels: 10 }
+    4: { experience-levels: 20 }
+    5: { experience-levels: 30 }
+
+collection:
+  enabled: true
+  # Registered collector hoppers are distributed across processing cycles.
+  processing-interval-ticks: 5
+  max-hoppers-per-cycle: 100
+  max-items-per-hopper-cycle: 16
+  pause-below-tps: 17.0
+  levels:
+    1: { radius: 1.0 }
+    2: { radius: 2.0 }
+    3: { radius: 3.0 }
+    4: { radius: 4.0 }
+    5: { radius: 5.0 }
+
+storage:
+  save-on-change: true
+
+teleport:
+  enabled: true
+  processing-interval-ticks: 10
+  max-hoppers-per-cycle: 100
+  items-per-transfer: 8
+  allow-cross-world: false
+  allow-unloaded-destination: false
+  owner-only-linking: true
+
+mining:
+  enabled: true
+  # Includes air, protected blocks and rejected candidates; bounds work per tick.
+  max-scanned-blocks-per-hopper-cycle: 256
+  processing-interval-ticks: 20
+  max-hoppers-per-cycle: 40
+  pause-below-tps: 17.0
+  require-owner-online: false
+  tool-material: DIAMOND_PICKAXE
+
+  # True quarry behavior: clear nearby blocks above first, then mine
+  # complete horizontal layers downward until the world's minimum height.
+  mine-above: true
+  max-blocks-above: 8
+  continue-to-world-min-height: true
+
+  levels:
+    1: { radius: 1, blocks-per-cycle: 1 }
+    2: { radius: 1, blocks-per-cycle: 2 }
+    3: { radius: 2, blocks-per-cycle: 2 }
+    4: { radius: 2, blocks-per-cycle: 3 }
+    5: { radius: 2, blocks-per-cycle: 4 }
+
+  allowed-materials:
+    # Overworld
+    - STONE
+    - COBBLESTONE
+    - DEEPSLATE
+    - TUFF
+    - CALCITE
+    - GRANITE
+    - DIORITE
+    - ANDESITE
+    - DIRT
+    - GRASS_BLOCK
+    - GRAVEL
+    - SAND
+    - COAL_ORE
+    - DEEPSLATE_COAL_ORE
+    - COPPER_ORE
+    - DEEPSLATE_COPPER_ORE
+    - IRON_ORE
+    - DEEPSLATE_IRON_ORE
+    - GOLD_ORE
+    - DEEPSLATE_GOLD_ORE
+    - REDSTONE_ORE
+    - DEEPSLATE_REDSTONE_ORE
+    - LAPIS_ORE
+    - DEEPSLATE_LAPIS_ORE
+    - DIAMOND_ORE
+    - DEEPSLATE_DIAMOND_ORE
+    - EMERALD_ORE
+    - DEEPSLATE_EMERALD_ORE
+    - DRIPSTONE_BLOCK
+    - POINTED_DRIPSTONE
+    # Nether
+    - NETHERRACK
+    - SOUL_SAND
+    - SOUL_SOIL
+    - NETHER_QUARTZ_ORE
+    - NETHER_GOLD_ORE
+    - BLACKSTONE
+    - BASALT
+    - MAGMA_BLOCK
+    - OBSIDIAN
+    # End
+    - END_STONE
+
+  # Bedrock and containers remain protected even if removed from this list.
+  blocked-materials:
+    - BEDROCK
+    - HOPPER
+    - CHEST
+    - TRAPPED_CHEST
+    - BARREL
+    - SHULKER_BOX
+
+
+performance:
+  # Existing engines already use staggered processing and TPS pause thresholds.
+  # This section controls Build 7 operational safeguards.
+  warn-hopper-count: 500
+  admin-stats-enabled: true
+  log-startup-summary: true
+
+release:
+  update-notices: false
+  debug: false
+  startup-summary: true
+
+# Missing cosmetic capabilities are safely skipped.
+visuals:
+  mining-effects: true
+  gui-sounds: true
+  # Vanilla already provides placement/break sounds; opt in for extra feedback.
+  hopper-sounds: false
+
+
